@@ -1,19 +1,21 @@
 import numpy as np
 
-zeros = np.zeros((3,4))
-# zeros = np.array([[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]], dtype=float)
-print(zeros)
-
-ones = np.ones((3,5))
-# ones = np.array([[1, 1, 1, 1, 1],[1, 1, 1, 1, 1],[1, 1, 1, 1, 1]], dtype=float)
-print(ones)
-
-# range_array = np.arange(0, 20, 2)
-range_array = np.arange(1, 10)
-# range_array = list()
-# for i in range(1, 10):
-#     range_array.append(i)
-print(range_array)
-
-space_array = np.linspace(0, 1, 5)  # 0부터 1까지 숫자 5개로 구간 설정
-print(space_array)
+# arr = np.array(["Korean", "English", "Mathmatics"])
+# arr = np.array([[1, 2, 3],[4, 5, 9]])
+arr = np.array(
+    [
+        [
+            [1.0, 2.0, 3.1],
+            [4.2, 5.9, 9.1]
+        ],
+        [
+            [1.1, 0.8, 2.1],
+            [6.3, 1.9, 77.1]
+        ]
+    ]
+)
+print(arr)
+print(arr.shape, arr.dtype, arr.ndim, arr.size)
+# 위 3차원 배열에서 1.9만 출력
+print(arr[1][1][1])
+print(arr[1, 1, 1])
