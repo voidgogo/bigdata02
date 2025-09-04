@@ -1,14 +1,10 @@
 import numpy as np
 
-g = np.array([
-    [3, 2, 1],
-    [6, 5, 4]
-])
-print(np.sum(g))
-print(np.sum(g, axis=0))  # 열 기준을 축으로 더함
-print(np.sum(g, axis=1))  # 행 기준을 축으로 더함
+# 조건부 선택과 필터링
+h = np.arange(1, 6)
 
-print(np.mean(g))  # 산술평균  21/6
-print(np.max(g))
-print(np.min(g))
-print(np.std(g))  # 표준편차 standard deviation
+mask = h > 2
+print(h[mask])
+
+result = np.where(h > 3, h, 0)  # 3보다 큰 값은 그 값 그대로 3이하의 값은 0으로 처리
+print(result)
