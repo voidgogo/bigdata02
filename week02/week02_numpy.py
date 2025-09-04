@@ -1,18 +1,12 @@
 import numpy as np
 
-c = np.arange(1, 13)  # 1차원 배열
+d = np.array([4, 25, 9, 16])
 
-# r = c.reshape(2, 2, 3)  # 3차원 배열형태로 변환
-r = c.reshape(4, 3)  # 2차원 배열형태로 변환
-print(c)
-print(r)
-f = r.flatten()  # 2차원 배열을 1차원 배열로 변환
-print(f)
+print(np.sqrt(d))  # 제곱근 square root
+print(np.exp(d))  # 지수함수 exponent function
+print(np.log(d))  # 자연로그
 
-# 전치행렬
-t = r.T
-print(t)
-
-# 단위행렬
-e1 = np.eye(4)
-print(e1)
+e = np.array([0, np.pi/2, np.pi])  # [0, 3.14159265/2, 3.14159265]
+print(e)
+print(np.sin(e))  # 사인함수
+print(np.cos(e))  # 코사인함수
