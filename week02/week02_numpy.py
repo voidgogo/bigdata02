@@ -1,12 +1,14 @@
 import numpy as np
 
-d = np.array([4, 25, 9, 16])
+g = np.array([
+    [3, 2, 1],
+    [6, 5, 4]
+])
+print(np.sum(g))
+print(np.sum(g, axis=0))  # 열 기준을 축으로 더함
+print(np.sum(g, axis=1))  # 행 기준을 축으로 더함
 
-print(np.sqrt(d))  # 제곱근 square root
-print(np.exp(d))  # 지수함수 exponent function
-print(np.log(d))  # 자연로그
-
-e = np.array([0, np.pi/2, np.pi])  # [0, 3.14159265/2, 3.14159265]
-print(e)
-print(np.sin(e))  # 사인함수
-print(np.cos(e))  # 코사인함수
+print(np.mean(g))  # 산술평균  21/6
+print(np.max(g))
+print(np.min(g))
+print(np.std(g))  # 표준편차 standard deviation
