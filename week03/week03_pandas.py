@@ -7,5 +7,6 @@ df4 = pd.DataFrame({
     index=[1, 2, 3, 4]
 )
 print(df4)
-df5 = df4.pivot(index='날짜', columns='도시', values='온도')
-print(df5)
+# df6 = df4.sort_values('온도')  # ascending
+df6 = df4.sort_values('온도', ascending=False)  # descending
+print(df6)
