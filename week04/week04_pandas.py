@@ -3,38 +3,12 @@ import pandas as pd
 import seaborn as sns
 
 mpg = sns.load_dataset("mpg")
-# print(mpg.info())
-# print(mpg.head(3))
-# print(mpg.tail(3))
+# print(mpg.value_counts())
 
-# mpg_desc = mpg.sort_values(by=['mpg'], ascending=False)
-# print(mpg_desc)
-
-# print(mpg.describe())
-
-# print(mpg[mpg['mpg'] > 40])
-# print(mpg.query('mpg > 40'))
-
-# print(mpg.drop_duplicates())
-
-# df = pd.DataFrame({
-#     'date':['2025-09-11','2025-09-11','2025-09-12','2025-09-11'],
-#     'city':['서울', '안양', '서울', '안양'],
-#     'temp':[23, 22, 24, 22]},
-#     index=[1, 2, 3, 4]
-# )
+df = pd.DataFrame({
+    'city': ['seoul', 'anyang', 'incheon', 'seoul', 'seoul', 'anyang'],
+    'name': ['tom', 'jerry', 'kim', 'park', 'park', 'lee']}
+    , index=[1, 2, 3, 4, 5, 6])
 # print(df)
-# print(df.drop_duplicates())
-
-# print(mpg.sample(n=5))
-
-# print(mpg.nlargest(5, 'mpg'))
-# print(mpg.nsmallest(5, 'mpg'))
-
-# print(mpg.info())
-
-# print(mpg[['displacement', 'horsepower', 'weight', 'acceleration', 'model_year']])
-# print(mpg.iloc[:,2:7])
-# print(mpg.loc[:, 'displacement':'model_year'])
-
-# print(mpg.filter(regex='p..er'))
+# print(df.value_counts())
+# print(df['city'].nunique())
