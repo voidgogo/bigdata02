@@ -1,18 +1,16 @@
 import pandas as pd
-from sklearn.linear_model import LinearRegression
-from sklearn.neighbors import KNeighborsRegressor
+# from sklearn.linear_model import LinearRegression
+# from sklearn.neighbors import KNeighborsRegressor
+import tglearn as tg
 
 df = pd.read_csv('life_satisfaction.csv')
-# print(len(df))
-# print(df.tail(3))
-# print(df.info())
-# print(df.describe())
-
 X = df[["GDP per capita (USD)"]].values
 y = df[["Life satisfaction"]].values
 
-model1 = LinearRegression()
-model2 = KNeighborsRegressor(3)
+# model1 = LinearRegression()
+# model2 = KNeighborsRegressor(3)
+model1 = tg.LinearRegression()
+model2 = tg.KNeighborsRegressor()
 
 model1.fit(X, y)
 model2.fit(X, y)
