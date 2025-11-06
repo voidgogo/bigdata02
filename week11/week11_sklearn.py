@@ -21,4 +21,8 @@ diabetes = load_diabetes()
 
 df_diabetes = pd.DataFrame(diabetes.data, columns=diabetes.feature_names)
 # print(df_diabetes.info())
-print(df_diabetes.tail())
+# print(df_diabetes.tail())
+df_diabetes['target'] = diabetes.target  # 새로운 피쳐 추가
+# print(df_diabetes.info())
+# print(df_diabetes.tail())
+print(df_diabetes['age'].describe())
