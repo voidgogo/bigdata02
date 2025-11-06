@@ -14,7 +14,7 @@ df_diabetes['target'] = diabetes.target  # 당뇨병 진행 정도 값
 
 fig, axes = plt.subplots(2, 2, figsize=(12, 8))
 
-axes[0, 0].hist(df_diabetes['s1'], bins=20)
+axes[0, 0].hist(df_diabetes['s1'], bins=20, color='skyblue', edgecolor='red')
 axes[0, 0].set_title('Diabetes Data : TC Distribution')
 axes[0, 0].set_xlabel('TC')
 axes[0, 0].set_ylabel('Frequency')
@@ -34,3 +34,12 @@ axes[1, 1].set_xlabel('BMI')
 axes[1, 1].set_ylabel('Progression')
 
 plt.show()
+
+plt.figure(figsize=(12, 8))
+sns.histplot(df_diabetes['target'], color='blue', bins=10, kde=True)
+plt.title('Histogram of Diabetes Progression (Target)')
+plt.xlabel('Diabetes Progression')
+plt.ylabel('Frequency')
+
+plt.show()
+
