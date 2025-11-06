@@ -12,34 +12,10 @@ diabetes = load_diabetes()
 df_diabetes = pd.DataFrame(diabetes.data, columns=diabetes.feature_names)
 df_diabetes['target'] = diabetes.target  # 당뇨병 진행 정도 값
 
-fig, axes = plt.subplots(2, 2, figsize=(12, 8))
+corr = df_diabetes.corr()  # correlation (상관관계)
+# print(corr)
 
-axes[0, 0].hist(df_diabetes['s1'], bins=20, color='skyblue', edgecolor='red')
-axes[0, 0].set_title('Diabetes Data : TC Distribution')
-axes[0, 0].set_xlabel('TC')
-axes[0, 0].set_ylabel('Frequency')
-
-axes[0, 1].boxplot([df_diabetes['s1'], df_diabetes['s2'], df_diabetes['s3']])
-axes[0, 1].set_title('Diabetes Data : Boxplot')
-axes[0, 1].set_xticklabels(['TC', 'LDL', 'HDL'])
-
-axes[1, 0].scatter(df_diabetes['s1'], df_diabetes['target'], color='coral', alpha=0.5)
-axes[1, 0].set_title('Diabetes Data : TC vs Progression')
-axes[1, 0].set_xlabel('TC')
-axes[1, 0].set_ylabel('Progression')
-
-axes[1, 1].scatter(x=df_diabetes['bmi'], y=df_diabetes['target'], color='green', alpha=0.5)
-axes[1, 1].set_title('Diabetes Data : BMI vs Progression')
-axes[1, 1].set_xlabel('BMI')
-axes[1, 1].set_ylabel('Progression')
-
+# 당뇨병 데이터셋 상관관계 히트맵
+plt.figure(figsize=(12, 10))
+sns.heatmap(corr, cmap="coolwarm", annot=True, fmt=".2f", linewidths=.6)
 plt.show()
-
-plt.figure(figsize=(12, 8))
-sns.histplot(df_diabetes['target'], color='blue', bins=10, kde=True)
-plt.title('Histogram of Diabetes Progression (Target)')
-plt.xlabel('Diabetes Progression')
-plt.ylabel('Frequency')
-
-plt.show()
-
