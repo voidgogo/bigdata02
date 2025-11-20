@@ -45,4 +45,16 @@ high_volume_days = apple[apple['Volume'] >= high_volume_threshold]
 apple_filtered = apple[(apple['Date'] >= '2020-01-01') &
                        (apple['Close'] > 50) &
                        (apple['Volume'] > 2e8)]
-print(apple_filtered)
+# print(apple_filtered)
+
+plt.style.use('seaborn-v0_8-darkgrid')
+fig, ax = plt.subplots(figsize=(14, 6))
+
+ax.plot(apple['Date'], apple['Close']
+        , linewidth=2, label='Close price', color='red')
+
+ax.plot(apple['Date'], apple['MA_20']
+        , linewidth=2, label='20-day MA',
+        linestyle='--', alpha=0.5)
+
+plt.show()
