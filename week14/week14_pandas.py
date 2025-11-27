@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 pr = pd.read_csv('product.csv')
-# print(pr.head(20))
+print(pr)
 pr['path'] = pr.groupby('product_id')['operator'].transform(
     lambda x: '_'.join(x)
 )
@@ -32,4 +32,6 @@ process_map = {
 pr['process'] = pr['path'].map(process_map)
 # print(pr)
 pr = pr.rename({'path':'operator'}, axis=1)
+# print(pr)
+pr = pr.reset_index(drop=True)
 print(pr)
